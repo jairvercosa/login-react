@@ -1,28 +1,27 @@
-import React from "react"
+import React from 'react'
+import SignInForm from './SignInForm'
 
-const App = () => {
-    return (
-        <div className="container mt-5">
-            <div className="row mt-5">
-                <div className="offset-md-4 col-md-4 mt-5">
-                    <h2 className="mt-5">Login</h2>
-                    <form>
-                        <div className="form-group">
-                            <label>Email</label>
-                            <input type="email" name="email" className="form-control" placeholder="Enter email" />
-                        </div>
-                        <div className="form-group">
-                            <label>Password</label>
-                            <input type="password" name="password" className="form-control" placeholder="Enter your password" />
-                        </div>
-                        <div className="form-group">
-                            <button className="btn-primary btn-lg">Login</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    )  
-};
+class App extends React.Component {
+    submit(values) {
+        fetch("https://api.vercosa.life/auth/authenticate", {
+            method: 'post',
+            body: JSON.stringify(values)
+        }).then(
+            (result) => {
+                console.log(result);
+            },
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            (error) => {
+                console.log(error);
+            }
+        );
+    }
+
+    render() {
+        return <SignInForm onSubmit={this.submit} />
+    }
+}
 
 export default App;

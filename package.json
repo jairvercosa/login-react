@@ -33,6 +33,10 @@
     "express": "^4.17.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helper": "^3.2.0"
+    "react-helper": "^3.2.0",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
+    "redux-form": "^8.2.1",
+    "redux-form-website-template": "^1.0.7"
   }
 }
