@@ -17,7 +17,7 @@ let SignInForm = props => {
                             label="Username"
                         />
                         <Field
-                            name="Password"
+                            name="password"
                             type="password"
                             component={LoginField}
                             label="Password"

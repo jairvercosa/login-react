@@ -3,16 +3,19 @@ import SignInForm from './SignInForm'
 
 class App extends React.Component {
     submit(values) {
+        let data = {
+            username: values.username,
+            password: values.password,
+            client_id: "5NtynaJRQI9KcTASzhYsXnUIiaD6h2aM"
+        };
+
         fetch("https://api.vercosa.life/auth/authenticate", {
             method: 'post',
-            body: JSON.stringify(values)
+            body: JSON.stringify(data)
         }).then(
             (result) => {
                 console.log(result);
             },
-            // Note: it's important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
             (error) => {
                 console.log(error);
             }
