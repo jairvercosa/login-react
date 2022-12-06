@@ -30,7 +30,7 @@
     "webpack-dev-server": "^3.4.1"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helper": "^3.2.0",
